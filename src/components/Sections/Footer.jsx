@@ -38,7 +38,7 @@ export default function Contact() {
       </div>
       <BottomFooter>
     
-      <div className=""><h4>📧 hello@propertymaintenancebristol.co.uk</h4></div>
+      <div className=""><h4>📧 hello@bristolpropertymaintenance.co.uk</h4></div>
         <div><h4>📞 0333 360 6113</h4></div>
         
     
