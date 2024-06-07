@@ -22,6 +22,10 @@ export default function TopNavbar() {
 
   return (
     <>
+    <ContactInfoSmallScreen>
+        <a href="mailto:hello@bristolpropertymaintenance.co.uk">📧 hello@bristolpropertymaintenance.co.uk</a>
+        <a href="tel:03333606113">📞 0333 360 6113</a>
+      </ContactInfoSmallScreen>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
       <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "80px" }}>
@@ -65,7 +69,7 @@ export default function TopNavbar() {
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer">
-            <a href="mailto:hello@propertymaintenancebristol.co.uk">📧 hello@bristolpropertymaintenance</a> <br/>
+            <a href="mailto:hello@propertymaintenancebristol.co.uk" style={{ padding: "10px 30px 10px 0" }}>📧 hello@bristolpropertymaintenance.co.uk</a> <br/>
               <a href="/" style={{ padding: "10px 30px 10px 0" }}>
               
                 Call today 
@@ -80,12 +84,46 @@ export default function TopNavbar() {
   );
 }
 
+const ContactInfoSmallScreen = styled.div`
+  display: none;
+  background-color: #003366; /* Dark blue background */
+  color: white; /* White text */
+  text-align: center;
+  padding: 10px 0;
+  font-weight:700;
+  a {
+    color: white;
+    display: block;
+    padding: 5px 0;
+  }
+  @media (max-width: 760px) {
+  position:fixed;
+  width:100%;
+    display: block;
+    z-index:999;
+  }
+`;
+
+
 const Wrapper = styled.nav`
   width: 100%;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   z-index: 999;
+  transition: height 0.3s ease-in-out, top 0.3s ease-in-out;
+
+
+    @media (max-width: 760px) {
+    display: block;
+    width: 100%;
+   
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 999;
+  transition: height 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
 `;
 const NavInner = styled.div`
   position: relative;
@@ -109,7 +147,9 @@ const UlWrapper = styled.ul`
   }
 `;
 const UlWrapperRight = styled.ul`
-  @media (max-width: 760px) {
+ 
+
+@media (max-width: 760px) {
     display: none;
   }
 `;

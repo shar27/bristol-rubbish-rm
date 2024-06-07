@@ -10,15 +10,24 @@ import Dots from "../../assets/svg/Dots";
 export default function Header() {
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
+     
+   
       <LeftSide className="flexCenter">
         <div>
+        <HeadingTag>
+            Property maintenance specialists
+          </HeadingTag>
           <h1 className="extraBold font60">We are a Property Maintenance Company.</h1>
+          
+          
           <HeaderP className="font13 semiBold">
           Looking for reliable property maintenance services in Bristol? 
           Our experienced team offers comprehensive solutions for residential and commercial properties, 
           including building maintenance, repairs, and management. Trust us for efficient and affordable services tailored to landlords and property owners. 
           Contact us for emergency assistance and ensure your property's upkeep with our expert solutions.
           </HeaderP>
+
+          
           <BtnWrapper>
             <a href="#contactForm">
             <FullButton title="Free Quote"  />
@@ -54,12 +63,15 @@ const Wrapper = styled.section`
   padding-top: 80px;
   width: 100%;
   min-height: 840px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   @media (max-width: 960px) {
     flex-direction: column;
   }
 `;
 const LeftSide = styled.div`
-  width: 50%;
+   width: 50%;
   height: 100%;
   @media (max-width: 960px) {
     width: 100%;
@@ -72,8 +84,9 @@ const LeftSide = styled.div`
   }
 `;
 const RightSide = styled.div`
-  width: 50%;
+   width: 50%;
   height: 100%;
+  position: relative;
   @media (max-width: 960px) {
     width: 100%;
     order: 1;
@@ -81,7 +94,7 @@ const RightSide = styled.div`
   }
 `;
 const HeaderP = styled.div`
-  max-width: 470px;
+   max-width: 470px;
   padding: 15px 0 50px 0;
   line-height: 1.5rem;
   @media (max-width: 960px) {
@@ -90,14 +103,45 @@ const HeaderP = styled.div`
     max-width: 100%;
   }
 `;
-const BtnWrapper = styled.div`
-  max-width: 190px;
+
+
+const HeadingTag = styled.div`
+  display: none;
   @media (max-width: 960px) {
-    margin: 0 auto;
+    display: block;
+    text-transform:uppercase;
+    text-align: center;
+    font-weight:700;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 1.5rem;
+  }
+`;
+
+
+const BtnWrapper = styled.div`
+  
+ display: block;
+ width:80%;
+ margin-bottom:30px;
+ font-weight:700;
+  @media (max-width: 960px) {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-weight:700;
   }
 `;
 const GreyDiv = styled.div`
-  width: 30%;
+    width: 30%;
   height: 700px;
   position: absolute;
   top: 0;
@@ -130,15 +174,23 @@ const QuoteWrapper = styled.div`
   max-width: 330px;
   padding: 30px;
   z-index: 99;
+  
   @media (max-width: 960px) {
-    left: 20px;
+    left: 50%;
+    display:none;
+    bottom: auto;
+    top: 40%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
   }
   @media (max-width: 560px) {
+  display:none;
     bottom: -50px;
   }
 `;
 const QuotesWrapper = styled.div`
-  position: absolute;
+    position: absolute;
+    
   left: -20px;
   top: -10px;
 `;
