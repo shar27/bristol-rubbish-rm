@@ -29,7 +29,7 @@ export default function TopNavbar() {
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
-              Property <br/>Maintenance Manchester
+              Property <br/>Maintenance Bristol
             </h1>
           </Link>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
@@ -65,11 +65,11 @@ export default function TopNavbar() {
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer">
-            <a href="mailto:hello@propertymaintenancemanchester.co.uk">📧 hello@propertymaintenancemanchester.co.uk</a> <br/>
+            <a href="mailto:hello@propertymaintenancebristol.co.uk">📧 hello@propertymaintenancebristol.co.uk</a> <br/>
               <a href="/" style={{ padding: "10px 30px 10px 0" }}>
               
                 Call today 
-                📞 0161 821 0108
+                📞 0333 360 6113
               </a>
             </li>
            

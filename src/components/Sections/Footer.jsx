@@ -24,7 +24,7 @@ export default function Contact() {
               © {getCurrentYear()} - <span className="purpleColor font13">Property Maintenance Liverpool</span> All Right Reserved
             </StyleP> */}
             <StyleP className="whiteColor font13">
-             <h6 className="whiteColor font13">Property Maintenance Manchester is a
+             <h6 className="whiteColor font13">Property Maintenance Bristol is a
              trading name for <br/> SWIFT UK PROPERTY INVESTMENTS LTD. <br/>
              Company number: 15244665
              
@@ -38,8 +38,8 @@ export default function Contact() {
       </div>
       <BottomFooter>
     
-      <div className=""><h4>📧 hello@propertymaintenancemanchester.co.uk</h4></div>
-        <div><h4>📞 0161 821 0108</h4></div>
+      <div className=""><h4>📧 hello@propertymaintenancebristol.co.uk</h4></div>
+        <div><h4>📞 0333 360 6113</h4></div>
         
     
       </BottomFooter>

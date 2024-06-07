@@ -27,7 +27,7 @@ export default function Services() {
           <HeaderInfo>
             <h1 className="font40 extraBold">Our Awesome Services</h1>
             <p className="font13">
-            Explore our top-notch property maintenance services in Liverpool for residential 
+            Explore our top-notch property maintenance services in Bristol for residential 
             and commercial properties, ensuring your spaces stay in prime condition with our expert solutions.
             </p>
           </HeaderInfo>
