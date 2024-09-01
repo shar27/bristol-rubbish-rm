@@ -15,7 +15,7 @@ export default function Header() {
       <LeftSide className="flexCenter">
         <div>
         <HeadingTag>
-            Property maintenance specialists covering Bath, Bristol & surrouding areas.
+            Property maintenance specialists covering Bath, Bristol & surrounding areas.
           </HeadingTag>
           <h1 className="extraBold font60">We are a Property Maintenance Company.</h1>
           
