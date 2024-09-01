@@ -113,6 +113,7 @@ const HeadingTag = styled.div`
     text-transform:uppercase;
     text-align: center;
     font-weight:700;
+    opacity:100%;
     margin-bottom: 20px;
     position: absolute;
     top: 50%;
@@ -125,6 +126,7 @@ const HeadingTag = styled.div`
    @media (max-width: 600px) {
     display: block;
     color:white;
+    opacity:100%;
     text-transform:uppercase;
     text-align: center;
     font-weight:700;
@@ -172,6 +174,7 @@ const ImageWrapper = styled.div`
   justify-content: flex-end;
   position: relative;
   z-index: 9;
+ 
   @media (max-width: 960px) {
     width: 100%;
     justify-content: center;
