@@ -15,13 +15,13 @@ export default function Header() {
       <LeftSide className="flexCenter">
         <div>
         <HeadingTag>
-            Property maintenance specialists
+            Property maintenance specialists covering Bath, Bristol & surrouding areas.
           </HeadingTag>
           <h1 className="extraBold font60">We are a Property Maintenance Company.</h1>
           
           
           <HeaderP className="font13 semiBold">
-          Looking for reliable property maintenance services in Bristol? 
+          Looking for reliable property maintenance services in Bristol, Bath & surrouding areas? 
           Our experienced team offers comprehensive solutions for residential and commercial properties, 
           including building maintenance, repairs, and management. Trust us for efficient and affordable services tailored to landlords and property owners. 
           Contact us for emergency assistance and ensure your property's upkeep with our expert solutions.
@@ -109,6 +109,7 @@ const HeadingTag = styled.div`
   display: none;
   @media (max-width: 960px) {
     display: block;
+    color:white;
     text-transform:uppercase;
     text-align: center;
     font-weight:700;
@@ -119,6 +120,21 @@ const HeadingTag = styled.div`
     transform: translateX(-50%);
     z-index: 10;
     font-size: 1.5rem;
+  }
+
+   @media (max-width: 600px) {
+    display: block;
+    color:white;
+    text-transform:uppercase;
+    text-align: center;
+    font-weight:700;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 1.25rem;
   }
 `;
 
@@ -163,7 +179,7 @@ const ImageWrapper = styled.div`
 `;
 const Img = styled.img`
   @media (max-width: 560px) {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
 `;

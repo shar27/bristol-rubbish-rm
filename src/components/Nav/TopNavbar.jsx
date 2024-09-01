@@ -28,13 +28,13 @@ export default function TopNavbar() {
       </ContactInfoSmallScreen>
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "80px" }}>
+      <Wrapper className="flexCenter animate whiteBg" style={y > 100 ? { height: "60px" } : { height: "100px" }}>
         <NavInner className="container flexSpaceCenter">
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
-            <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
-              Property <br/>Maintenance Bristol
-            </h1>
+            {/* <h2>
+              Property Maintenance<br/> Bristol & Bath
+            </h2> */}
           </Link>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
             <BurgerIcon />
@@ -50,16 +50,12 @@ export default function TopNavbar() {
                 Services
               </Link>
             </li>
-            {/* <li className="semiBold font15 pointer">
+            <li className="semiBold font15 pointer">
               <Link activeClass="active" style={{ padding: "10px 15px" }} to="projects" spy={true} smooth={true} offset={-80}>
-                Projects
+                Locations
               </Link>
-            </li> */}
-            {/* <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="blog" spy={true} smooth={true} offset={-80}>
-                Blog
-              </Link>
-            </li> */}
+            </li>
+           
           
             <li className="semiBold font15 pointer">
               <Link activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy={true} smooth={true} offset={-80}>
