@@ -186,7 +186,8 @@ const Img = styled.img`
 const QuoteWrapper = styled.div`
   position: absolute;
   left: 0;
-  bottom: 50px;
+  top: 40%;
+  
   max-width: 330px;
   padding: 30px;
   z-index: 99;
