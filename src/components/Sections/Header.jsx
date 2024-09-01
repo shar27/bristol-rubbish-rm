@@ -21,7 +21,7 @@ export default function Header() {
           
           
           <HeaderP className="font13 semiBold">
-          Looking for reliable property maintenance services in Bristol, Bath & surrouding areas? 
+          Looking for reliable property maintenance services in Bristol, Bath & surrouding areas
           Our experienced team offers comprehensive solutions for residential and commercial properties, 
           including building maintenance, repairs, and management. Trust us for efficient and affordable services tailored to landlords and property owners. 
           Contact us for emergency assistance and ensure your property's upkeep with our expert solutions.
