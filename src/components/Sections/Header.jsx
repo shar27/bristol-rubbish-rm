@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 // Components
 import FullButton from "../Buttons/FullButton";
 // Assets
@@ -8,36 +9,46 @@ import QuotesIcon from "../../assets/svg/Quotes";
 import Dots from "../../assets/svg/Dots";
 
 export default function Header() {
+
+
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
-     
-   
       <LeftSide className="flexCenter">
         <div>
-        <HeadingTag>
-            Property maintenance specialists covering Bath, Bristol & surrounding areas.
+          <HeadingTag>
+            Property maintenance specialists covering Bath, Bristol &
+            surrounding areas.
           </HeadingTag>
-          <h1 className="extraBold font60">We are a Property Maintenance Company.</h1>
-          
-          
+          <h1 className="extraBold font60">
+            We are a Property Maintenance Company.
+          </h1>
+
           <HeaderP className="font13 semiBold">
-          Looking for reliable property maintenance services in Bristol, Bath & surrouding areas
-          Our experienced team offers comprehensive solutions for residential and commercial properties, 
-          including building maintenance, repairs, and management. Trust us for efficient and affordable services tailored to landlords and property owners. 
-          Contact us for emergency assistance and ensure your property's upkeep with our expert solutions.
+            Looking for reliable property maintenance services in Bristol, Bath
+            & surrouding areas Our experienced team offers comprehensive
+            solutions for residential and commercial properties, including
+            building maintenance, repairs, and management. Trust us for
+            efficient and affordable services tailored to landlords and property
+            owners. Contact us for emergency assistance and ensure your
+            property's upkeep with our expert solutions.
           </HeaderP>
 
-          
           <BtnWrapper>
             <a href="#contactForm">
-            <FullButton title="Free Quote"  />
+              <FullButton title="Free Quote" />
             </a>
           </BtnWrapper>
         </div>
       </LeftSide>
       <RightSide>
         <ImageWrapper>
-          <Img className="radius8" src={HeaderImage} width="100%" alt="office" style={{zIndex: 9}} />
+          <Img
+            className="radius8"
+            src={HeaderImage}
+            width="100%"
+            alt="office"
+            style={{ zIndex: 9 }}
+          />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
               <QuotesIcon />
@@ -45,8 +56,8 @@ export default function Header() {
             <div>
               <p className="font15 whiteColor">
                 <em>Making the difficult choices, easier.</em>
-              </p>            
-              </div>
+              </p>
+            </div>
           </QuoteWrapper>
           <DotsWrapper>
             <Dots />
@@ -54,10 +65,10 @@ export default function Header() {
         </ImageWrapper>
         <GreyDiv className="lightBg"></GreyDiv>
       </RightSide>
+      
     </Wrapper>
   );
 }
-
 
 const Wrapper = styled.section`
   padding-top: 80px;
@@ -71,7 +82,7 @@ const Wrapper = styled.section`
   }
 `;
 const LeftSide = styled.div`
-   width: 50%;
+  width: 50%;
   height: 100%;
   @media (max-width: 960px) {
     width: 100%;
@@ -84,7 +95,7 @@ const LeftSide = styled.div`
   }
 `;
 const RightSide = styled.div`
-   width: 50%;
+  width: 50%;
   height: 100%;
   position: relative;
   @media (max-width: 960px) {
@@ -93,8 +104,9 @@ const RightSide = styled.div`
     margin-top: 30px;
   }
 `;
+
 const HeaderP = styled.div`
-   max-width: 470px;
+  max-width: 470px;
   padding: 15px 0 50px 0;
   line-height: 1.5rem;
   @media (max-width: 960px) {
@@ -104,16 +116,15 @@ const HeaderP = styled.div`
   }
 `;
 
-
 const HeadingTag = styled.div`
   display: none;
   @media (max-width: 960px) {
     display: block;
-    color:white;
-    text-transform:uppercase;
+    color: white;
+    text-transform: uppercase;
     text-align: center;
-    font-weight:700;
-    opacity:100%;
+    font-weight: 700;
+    opacity: 100%;
     margin-bottom: 20px;
     position: absolute;
     top: 50%;
@@ -123,13 +134,13 @@ const HeadingTag = styled.div`
     font-size: 1.5rem;
   }
 
-   @media (max-width: 600px) {
+  @media (max-width: 600px) {
     display: block;
-    color:white;
-    opacity:100%;
-    text-transform:uppercase;
+    color: white;
+    opacity: 100%;
+    text-transform: uppercase;
     text-align: center;
-    font-weight:700;
+    font-weight: 700;
     margin-bottom: 20px;
     position: absolute;
     top: 35%;
@@ -140,13 +151,11 @@ const HeadingTag = styled.div`
   }
 `;
 
-
 const BtnWrapper = styled.div`
-  
- display: block;
- width:80%;
- margin-bottom:30px;
- font-weight:700;
+  display: block;
+  width: 80%;
+  margin-bottom: 30px;
+  font-weight: 700;
   @media (max-width: 960px) {
     display: block;
     position: absolute;
@@ -155,11 +164,11 @@ const BtnWrapper = styled.div`
     bottom: 20px;
     transform: translateX(-50%);
     z-index: 10;
-    font-weight:700;
+    font-weight: 700;
   }
 `;
 const GreyDiv = styled.div`
-    width: 30%;
+  width: 30%;
   height: 700px;
   position: absolute;
   top: 0;
@@ -174,7 +183,7 @@ const ImageWrapper = styled.div`
   justify-content: flex-end;
   position: relative;
   z-index: 9;
- 
+
   @media (max-width: 960px) {
     width: 100%;
     justify-content: center;
@@ -190,27 +199,27 @@ const QuoteWrapper = styled.div`
   position: absolute;
   left: 0;
   top: 40%;
-  
+
   max-width: 330px;
   padding: 30px;
   z-index: 99;
-  
+
   @media (max-width: 960px) {
     left: 50%;
-    display:none;
+    display: none;
     bottom: auto;
     top: 40%;
     transform: translateX(-50%);
     margin-bottom: 10px;
   }
   @media (max-width: 560px) {
-  display:none;
+    display: none;
     bottom: -50px;
   }
 `;
 const QuotesWrapper = styled.div`
-    position: absolute;
-    
+  position: absolute;
+
   left: -20px;
   top: -10px;
 `;
@@ -226,5 +235,3 @@ const DotsWrapper = styled.div`
     display: none;
   }
 `;
-
-

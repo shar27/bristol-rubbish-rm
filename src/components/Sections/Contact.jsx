@@ -28,7 +28,7 @@ const [message, setMessage] = useState('')
 
   return (
     <Wrapper id="contact">
-      <div className="lightBg">
+      <div id="contact" className="lightBg">
         <div className="container">
           <HeaderInfo>
             <h1 className="font40 extraBold">Get a quote</h1>
