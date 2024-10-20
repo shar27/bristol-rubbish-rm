@@ -15,11 +15,7 @@ export default function Landing() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 150) {
-        setShowArrow(true);
-      } else {
-        setShowArrow(false);
-      }
+      setShowArrow(window.scrollY > 150);
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -41,18 +37,10 @@ export default function Landing() {
       <Header />
       <FloatWrapper>
         <a href="https://wa.me/447907772626" style={{ marginRight: '10px' }}>
-          <Img src={WhatsApp} width="50px" />
+          <Img src={WhatsApp} alt="WhatsApp" />
         </a>
         {showArrow && (
-          <button
-            onClick={scrollToTop}
-            style={{
-              width: '50px',
-              backgroundColor: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-            }}
-          >
+          <ArrowButton onClick={scrollToTop}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -67,7 +55,7 @@ export default function Landing() {
                 d="M5 10l7-7m0 0l7 7m-7-7v18"
               />
             </svg>
-          </button>
+          </ArrowButton>
         )}
       </FloatWrapper>
       <Reviews />
@@ -79,17 +67,32 @@ export default function Landing() {
 }
 
 const Img = styled.img`
+  width: 50px; /* Fixed width for desktop */
+  height: auto;
+
   @media (max-width: 560px) {
-    width: 100%;
-    height: auto;
+    width: 40px; /* Smaller size for mobile */
   }
 `;
 
 const FloatWrapper = styled.div`
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
-  position: fixed; /* Keep it fixed on the screen */
-  bottom: 20px; /* Position it near the bottom */
-  right: 20px; /* Position it near the right edge */
-  z-index: 1000; /* Make sure it stays on top */
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+`;
+
+const ArrowButton = styled.button`
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 560px) {
+    width: 40px; /* Smaller size for mobile */
+    height: 40px; /* Smaller size for mobile */
+  }
 `;
