@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TopNavbar from "../components/Nav/TopNavbar";
-import Footer from '../components/Sections/Footer'
+import Footer from '../components/Sections/Footer';
 import Contact from "../components/Sections/Contact";
-
 
 export default function Landlords() {
   const images = ['/livingroom.jpg', '/poolroom.jpg', '/bedroom.jpg'];
@@ -19,43 +18,43 @@ export default function Landlords() {
 
   return (
     <>
-    <TopNavbar />
-    <Container>
-      <Header>Landlords</Header>
-      <ContentAndSlideshowWrapper>
-        <ContentSection>
-          <SubHeader>From one Landlord to Another</SubHeader>
-          <Paragraph>
-            I’m a landlord myself, so I know how frustrating it can be at
-            times having to deal with the different aspects that come with it.
-            That’s why I am offering a guaranteed rent service, paired with
-            any minor refurbishment work needed to improve the quality of your
-            property. This hassle-free package also includes seamless
-            maintenance, making property ownership more straightforward and
-            financially secure.
-          </Paragraph>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '0.5rem' }}>
-            Benefits at a Glance:
-          </h3>
-          <BenefitsList>
-            <BenefitItem>✔ Guaranteed rent with contracts up to 5 years</BenefitItem>
-            <BenefitItem>✔ No missed payments</BenefitItem>
-            <BenefitItem>✔ No agency fees</BenefitItem>
-            <BenefitItem>✔ Regular maintenance and clean</BenefitItem>
-            <BenefitItem>✔ Hassle-free experience</BenefitItem>
-          </BenefitsList>
-        </ContentSection>
+      <TopNavbar />
+      <Container>
+        <Header>Landlords</Header>
+        <ContentAndSlideshowWrapper>
+          <ContentSection>
+            <SubHeader>From one Landlord to Another</SubHeader>
+            <Paragraph>
+              I’m a landlord myself, so I know how frustrating it can be at
+              times having to deal with the different aspects that come with it.
+              That’s why I am offering a guaranteed rent service, paired with
+              any minor refurbishment work needed to improve the quality of your
+              property. This hassle-free package also includes seamless
+              maintenance, making property ownership more straightforward and
+              financially secure.
+            </Paragraph>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '0.5rem' }}>
+              Benefits at a Glance:
+            </h3>
+            <BenefitsList>
+              <BenefitItem>✔ Guaranteed rent with contracts up to 5 years</BenefitItem>
+              <BenefitItem>✔ No missed payments</BenefitItem>
+              <BenefitItem>✔ No agency fees</BenefitItem>
+              <BenefitItem>✔ Regular maintenance and clean</BenefitItem>
+              <BenefitItem>✔ Hassle-free experience</BenefitItem>
+            </BenefitsList>
+          </ContentSection>
 
-        <SlideshowContainer>
-          <SlideImage
-            src={images[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
-          />
-        </SlideshowContainer>
-      </ContentAndSlideshowWrapper>
-    </Container>
-    <Contact/>
-    <Footer/>
+          <SlideshowContainer>
+            <SlideImage
+              src={images[currentIndex]}
+              alt={`Slide ${currentIndex + 1}`}
+            />
+          </SlideshowContainer>
+        </ContentAndSlideshowWrapper>
+      </Container>
+      <Contact />
+      <Footer />
     </>
   );
 }
@@ -78,6 +77,12 @@ const ContentAndSlideshowWrapper = styled.div`
   flex-direction: row;
   padding: 10px;
   gap: 20px; /* Space between content and slideshow */
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack on smaller screens */
+    gap: 10px; /* Adjust gap for stacked layout */
+    margin-top:10px;
+  }
 `;
 
 const ContentSection = styled.div`
@@ -91,11 +96,19 @@ const SubHeader = styled.h2`
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; /* Smaller font size on mobile */
+  }
 `;
 
 const Paragraph = styled.p`
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Smaller font size on mobile */
+  }
 `;
 
 const BenefitsList = styled.ul`
