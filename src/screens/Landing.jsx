@@ -82,6 +82,10 @@ const FloatWrapper = styled.div`
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+  @media (max-width: 560px) {
+    bottom: 40px;
+  right: 43px;
+  }
 `;
 
 const ArrowButton = styled.button`
