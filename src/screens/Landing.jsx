@@ -36,7 +36,7 @@ export default function Landing() {
       <TopNavbar />
       <Header />
       <FloatWrapper>
-        <a href="https://wa.me/447907772626" style={{ marginRight: '10px' }}>
+        <a href="https://wa.me/447907772626">
           <Img src={WhatsApp} alt="WhatsApp" />
         </a>
         {showArrow && (
@@ -72,6 +72,7 @@ const Img = styled.img`
 
   @media (max-width: 560px) {
     width: 40px; /* Smaller size for mobile */
+    
   }
 `;
 
@@ -84,7 +85,7 @@ const FloatWrapper = styled.div`
   z-index: 1000;
   @media (max-width: 560px) {
     bottom: 40px;
-  right: 43px;
+  right: 10px;
   }
 `;
 
