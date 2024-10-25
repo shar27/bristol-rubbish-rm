@@ -7,7 +7,7 @@ export default function Locations() {
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-};
+  };
 
   return (
     <div>
@@ -22,7 +22,6 @@ export default function Locations() {
         ></path>
       </svg>
       <LocationsWrapper>
-        
         {Object.keys(navRoutes).map((key, index) => (
           <a
             href={`${baseUrl}/${navRoutes[key]}`}
@@ -33,6 +32,13 @@ export default function Locations() {
           </a>
         ))}
       </LocationsWrapper>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#0B093B"
+          fill-opacity="1"
+          d="M0,64L48,101.3C96,139,192,213,288,250.7C384,288,480,288,576,261.3C672,235,768,181,864,186.7C960,192,1056,256,1152,277.3C1248,299,1344,277,1392,266.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
     </div>
   );
 }
@@ -41,7 +47,7 @@ const LocationsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  margin-top:-12px;
+  margin-top: -12px;
   padding: 1.25rem;
   height: auto;
   font-size: 21px;
