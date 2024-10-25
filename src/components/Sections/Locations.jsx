@@ -1,68 +1,55 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
+import navRoutes from "../../config/navRoutes";
+
 export default function Locations() {
+  const baseUrl = "https://www.bristolpropertymaintenance.co.uk/";
+
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+};
+
   return (
     <div>
-
-    <h2 style={{color: 'black', fontSize: '32px;', textAlign:'center'}}>Locations</h2>
-<LocationsWrapper>
-    <div>
-        Bristol
+      <h2 style={{ color: "black", fontSize: "32px", textAlign: "center" }}>
+        Areas we cover
+      </h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#0B093B"
+          fill-opacity="1"
+          d="M0,128L40,112C80,96,160,64,240,64C320,64,400,96,480,138.7C560,181,640,235,720,213.3C800,192,880,96,960,85.3C1040,75,1120,149,1200,181.3C1280,213,1360,203,1400,197.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+        ></path>
+      </svg>
+      <LocationsWrapper>
+        
+        {Object.keys(navRoutes).map((key, index) => (
+          <a
+            href={`${baseUrl}/${navRoutes[key]}`}
+            key={index}
+            style={{ color: "white" }}
+          >
+            {capitalizeFirstLetter(navRoutes[key])}
+          </a>
+        ))}
+      </LocationsWrapper>
     </div>
-    <div>
-        Bath
-    </div>
-    <div>
-        Glastonbury
-    </div>
-    <div>
-        Salisbury
-    </div>
-    
-    <div>Bradford-on-Avon</div>
-<div>Keynsham</div>
-<div>Radstock</div>
-<div>Corsham</div>
-<div>Chippenham</div>
-<div>Trowbridge</div>
-<div>Melksham</div>
-<div>Frome</div>
-<div>Warminster</div>
-<div>Midsomer Norton</div>
-<div>Westbury</div>
-<div>Calne</div>
-<div>Devizes</div>
-<div>Shepton Mallet</div>
-<div>Wells</div>
-<div>Bruton</div>
-<div>Peasedown St John</div>
-<div>Paulton</div>
-<div>Wellow</div>
-<div>Norton St Philip</div>
-
-
-    </LocationsWrapper>
-    </div>
-  )
+  );
 }
-
 
 const LocationsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  margin-top:-12px;
+  padding: 1.25rem;
+  height: auto;
+  font-size: 21px;
+  font-weight: bold;
+  color: white;
+  background-color: #0b093b;
 
-display:grid;
-grid-template-columns: repeat(4, 1fr);
-align-items:center;
-padding: 1.25rem;
-height:auto;
-font-size: 21px;
-font-weight:bold;
-color:white;
-background-color:#0B093B;
-
-@media (max-width: 768px) {
-  
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
-
-}
-
-`
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
