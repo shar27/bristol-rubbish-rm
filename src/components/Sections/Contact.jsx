@@ -1,69 +1,101 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-
 import styled from "styled-components";
-// Assets
-
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function Contact() {
-
-const [message, setMessage] = useState('')
-
+  const [message, setMessage] = useState('');
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
   const form = useRef();
+
+  useEffect(() => {
+    // Set the current URL in the hidden input field when component mounts
+    if (form.current) {
+      form.current.current_url.value = window.location.href;
+    }
+  }, []);
+
+  const onReCAPTCHAChange = (token) => {
+    setRecaptchaToken(token);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    const userEmail = form.current.user_email.value;
+    if (!recaptchaToken) {
+      setMessage('Please complete the reCAPTCHA');
+      return;
+    }
 
     emailjs.sendForm('service_go85cgq', 'template_zjh82na', form.current, 'n3cGJxtvclpiQjFrD')
       .then((result) => {
           console.log(result.text);
-          setMessage('Your message has been received')
+          setMessage('Your message has been received');
+          
       }, (error) => {
-        setMessage('Error sending message, please email hello@propertydealsourcinguk.co.uk')
+        setMessage('Error sending message, please email hello@swiftukproperties.co.uk');
           console.log(error.text);
       });
   };
 
   return (
     <Wrapper id="contact">
-      <div id="contact" className="lightBg">
+      <div className="lightBg">
         <div className="container">
           <HeaderInfo>
             <h1 className="font40 extraBold">Get a quote</h1>
-           
           </HeaderInfo>
           <div className="row" style={{ paddingBottom: "30px" }}>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               {message}
-              <Form onSubmit={sendEmail} ref={form} id="contactForm" >
+              <Form onSubmit={sendEmail} ref={form} id="contactForm">
                 <label className="font13">First name:</label>
-                <input required type="text"  name="fname" className="font20 extraBold" />
+                <input required type="text" name="fname" className="font20 extraBold" />
+                <label className="font13">Number:</label>
+                <input required type="tel" name="user_number" className="font20 extraBold" />
                 <label className="font13">Email:</label>
-                <input required type="text"  name="user_email" className="font20 extraBold" />
+                <input required type="email" name="user_email" className="font20 extraBold" />
+                <label className="font13">Postcode:</label>
+                <input required type="text" name="user_postcode" className="font20 extraBold" />
+
+                <label className="font13">Enquiry Type:</label>
+                <select required name="user_enquiry" className="font20 extraBold">
+                  <option value="handyman">Handyman</option>
+                  <option value="cleaning">Cleaning</option>
+                  <option value="clearance">Clearance</option>
+                  <option value="plumbing">Plumbing</option>
+                  <option value="electrician">Electrician</option>
+                </select>
+
+                <label className="font13">Have you sent us photos on WhatsApp or Email?</label>
+                <select required name="user_photos" className="font20 extraBold">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+
                 <label className="font13">Subject:</label>
-                <input required type="text"  name="subject" className="font20 extraBold" />
+                <input required type="text" name="subject" className="font20 extraBold" />
+                <label className="font13">Description:</label>
                 <textarea rows="4" cols="50" type="text" id="message" name="message" className="font20 extraBold" />
+
+                <input type="hidden" name="current_url" />
+
+                <ReCAPTCHA
+                  sitekey="6LfV9nkqAAAAAKJA-KJdoNsvQDXNTbBDIxkDXKbp"
+                  onChange={onReCAPTCHAChange}
+                />
               
-              <SumbitWrapper className="flex">
-                <ButtonInput type="submit" value="Send" 
-                className="pointer animate radius8" style={{ maxWidth: "220px" }} />
-              </SumbitWrapper>
+                <SubmitWrapper className="flex">
+                  <ButtonInput type="submit" value="Send" className="pointer animate radius8" style={{ maxWidth: "220px" }} />
+                </SubmitWrapper>
               </Form>
-            </div>
-           
-              
-               
-              
             </div>
           </div>
         </div>
-     
+      </div>
     </Wrapper>
   );
 }
-
 const Wrapper = styled.section`
   width: 100%;
 `;
@@ -115,7 +147,7 @@ const ContactImgBox = styled.div`
   align-self: flex-end; 
   margin: 10px 30px 10px 0;
 `;
-const SumbitWrapper = styled.div`
+const SubmitWrapper = styled.div`
   @media (max-width: 991px) {
     width: 100%;
     margin-bottom: 50px;

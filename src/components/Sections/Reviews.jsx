@@ -6,7 +6,7 @@ import FullButton from "../Buttons/FullButton";
 
 // Assets
 import AddImage1 from "../../assets/img/trustpilot.jpg";
-import AddImage2 from "../../assets/img/trustpilot.png";
+import AddImage2 from "../../assets/img/trustpilotnum.png";
 import AddImage3 from "../../assets/img/review.PNG";
 
 
