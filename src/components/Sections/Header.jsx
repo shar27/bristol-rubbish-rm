@@ -16,15 +16,15 @@ export default function Header() {
       <LeftSide className="flexCenter">
         <div>
           <HeadingTag>
-            Property maintenance specialists covering Bath, Bristol &
+          Rubbish Removal specialists covering Bath, Bristol &
             surrounding areas.
           </HeadingTag>
           <h1 className="extraBold font60">
-            We are a Property Maintenance Company.
+            Bristol Rubbish Removal.
           </h1>
 
           <HeaderP className="font13 semiBold">
-            Looking for reliable property maintenance services in Bristol, Bath
+            Looking for reliable Rubbish Removal services in Bristol, Bath
             & surrouding areas Our experienced team offers comprehensive
             solutions for residential and commercial properties, including
             building maintenance, repairs, and management. Trust us for
